@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('appointments', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            // $table->unsignedBigInteger('user_id');
             $table->string('fullname')->nullable();
+            $table->string('email')->nullable();
             $table->string('date')->nullable();
             $table->string('time')->nullable();
             $table->longText('reason')->nullable();
@@ -22,8 +23,8 @@ return new class extends Migration
 
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users')
-            ->onUpdate('cascade');
+            // $table->foreign('user_id')->references('id')->on('users')
+            // ->onUpdate('cascade');
         });
     }
 

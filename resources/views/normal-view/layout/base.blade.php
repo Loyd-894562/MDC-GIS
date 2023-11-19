@@ -20,7 +20,7 @@
             background-repeat: no-repeat;
             background-size: 100%;
         ">
-
+@include('normal-view.layout.navbar')
     <div class="wrapper py-8 px-4 lg:px-0">
         @yield('content')
 

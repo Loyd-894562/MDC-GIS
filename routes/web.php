@@ -43,7 +43,9 @@ Route::post('/contact-us', [NormalContactUsController::class, 'contactUsStore'])
 Route::get('/announcements', [NormalAnnouncementController::class, 'announcement']);
 Route::get('/view-activities', [NormalActivityController::class, 'activities']);
 Route::get('/services', [IndexController::class, 'services']);
-Route::get('/set-appointment', [SetAppointmentController::class, 'setAppointment']);
+Route::get('/check-appointment', [SetAppointmentController::class, 'index']);
+Route::post('/check-appointment', [SetAppointmentController::class, 'checkAppointment'])->name('appointment.checkStudent');
+Route::get('/set-appointment/{studentId}', [SetAppointmentController::class, 'setAppointment'])->name('normal-view.pages.appointment');
 Route::post('/set-appointment', [SetAppointmentController::class, 'store'])->name('appointment.set');
 
 Route::get('/login', [AuthIndexController::class, 'loginForm'])->name('login');

@@ -155,6 +155,25 @@
                                 </li>
                             </ul>
                         </li>
+
+                        <li class="nav-item">
+                            <a href="/admin/logs"
+                                class="nav-link {{ 'admin/logs' == request()->path() ? 'active2' : '' }}">
+                                <i class="nav-icon fa-solid fa-users"></i>
+                                <p>
+                                    Logs
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/downloadables"
+                                class="nav-link {{ 'admin/downloadables' == request()->path() ? 'active2' : '' }}">
+                                <i class="nav-icon fa-solid fa-users"></i>
+                                <p>
+                                    Downloadable Forms
+                                </p>
+                            </a>
+                        </li>
                         <li class="nav-header">SETTING MANAGEMENT</li>
                         <li class="nav-item menu-open">
                             <a href="#" class="nav-link">

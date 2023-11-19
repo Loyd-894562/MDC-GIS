@@ -1,4 +1,4 @@
-@extends('normal-view.layout.dashboard')
+@extends('normal-view.layout.base')
 
 @section('title')
     Announcement
@@ -18,6 +18,7 @@
                     <p class="text-center mt-3">
                        Please check your notification for the approval of your appointment. Thank you!
                     </p>
+                    <button><a href="/">Back to Home</a></button>
 
             </div>
         </div>

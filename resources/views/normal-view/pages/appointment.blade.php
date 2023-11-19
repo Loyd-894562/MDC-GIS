@@ -1,6 +1,6 @@
-{{-- @extends('normal-view.layout.base') --}}
+@extends('normal-view.layout.base')
 
-@extends('normal-view.layout.dashboard')
+{{-- @extends('normal-view.layout.dashboard') --}}
 
 @section('title')
     Set an Appointment
@@ -52,6 +52,16 @@
                         <input type="text" id="fullname" name="fullname" placeholder="Full Name"
                             class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" />
                         @error('fullname')
+                            <div class="text-sm text-red-500 italic">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
+                        <input type="text" id="email" name="email" placeholder="Email"
+                            class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" />
+                        @error('email')
                             <div class="text-sm text-red-500 italic">
                                 {{ $message }}
                             </div>
