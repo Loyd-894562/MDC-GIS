@@ -1,6 +1,5 @@
 @extends('normal-view.layout.base')
 
-@include('normal-view.layout.navbar')
 
 @section('content')
     <div class="container mx-auto bg-gray-200 flex flex-col items-center justify-center p-8 w-[700px]"

@@ -76,6 +76,7 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
     Route::delete('/admin/activities/{id}', [ActivityController::class, 'destroy'])->name('activities.destroy');
 
     Route::get('/admin/appointments', [AppointmentController::class, 'appointments'])->name('appointments.appointments');
+    Route::get('/admin/appointment-calendar', [AppointmentController::class, 'appointmentCalendar'])->name('appointments.appointment-calendar');
     Route::post('/admin/appointments', [AppointmentController::class, 'store'])->name('appointments.store');
     Route::put('/admin/appointments/{id}', [AppointmentController::class, 'update'])->name('appointments.update');
     Route::delete('/admin/appointments/{id}', [AppointmentController::class, 'destroy'])->name('appointments.destroy');

@@ -103,10 +103,10 @@
         })(window, document);
     </script>
 </head>
-
+@yield('styles')
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed">
     @include('admin.layout.sidebar')
-
+@yield('scripts')
 </body>
 
 </html>

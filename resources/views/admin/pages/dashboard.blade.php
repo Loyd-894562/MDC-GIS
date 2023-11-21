@@ -7,7 +7,7 @@
 @section('content')
     <div class="container mt-3">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div class="col-span-1">
+            <div class="col-span-1 color-accent" style=" border-left: 5px solid #FFA500;">
                 <a href="/admin/announcements">
                     <div class="info-box dash elevation-3" style="height: 110px;">
                         <div class="info-box-content">
@@ -20,7 +20,7 @@
                 </a>
             </div>
 
-            <div class="col-span-1">
+            <div class="col-span-1 color-accent" style=" border-left: 5px solid #00ff55;">
                 <a href="/admin/activities">
                     <div class="info-box dash elevation-3" style="height: 110px;">
                         <div class="info-box-content">
@@ -32,7 +32,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-span-1">
+            <div class="col-span-1 color-accent" style=" border-left: 5px solid #1100ff;">
                 <a href="/admin/feedbacks">
                     <div class="info-box dash elevation-3" style="height: 110px;">
                         <div class="info-box-content">
@@ -44,7 +44,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-span-1">
+            <div class="col-span-1 color-accent" style=" border-left: 5px solid #00ffff;">
                 <a href="/admin/appointments">
                     <div class="info-box dash elevation-3" style="height: 110px;">
                         <div class="info-box-content">
@@ -56,7 +56,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-span-1">
+            <div class="col-span-1 color-accent" style=" border-left: 5px solid #ff0000;">
                 <a href="/admin/users">
                     <div class="info-box dash elevation-3" style="height: 110px;">
                         <div class="info-box-content">
@@ -70,4 +70,14 @@
             </div>
         </div>
     </div>
+@endsection
+@section('styles')
+
+<style>
+    .color-accent{
+        height: 110px;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+    }
+</style>
 @endsection

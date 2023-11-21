@@ -13,6 +13,10 @@ class AppointmentController extends Controller
         $appointments = Appointment::all();
         return view('admin.pages.appointments.appointments', compact('appointments'));
     }
+    public function appointmentCalendar(){
+        $appointments = Appointment::all();
+        return view('admin.pages.appointments.appointment-calendar', compact('appointments'));
+    }
 
 public function store(Request $request, Appointment $appointment)
 {
