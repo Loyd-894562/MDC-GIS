@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\LogsController;
 use App\Http\Controllers\Admin\ChatsController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Admin\ActivityController;
@@ -17,6 +18,7 @@ use App\Http\Controllers\Admin\AdminAnnouncementController;
 use App\Http\Controllers\Admin\Admin_ChangePasswordController;
 use App\Http\Controllers\Normal_View\ChangePasswordController;
 use App\Http\Controllers\Normal_View\NormalActivityController;
+use App\Http\Controllers\Normal_View\NormalFeedbackController;
 use App\Http\Controllers\Normal_View\SetAppointmentController;
 use App\Http\Controllers\Normal_View\NormalContactUsController;
 use App\Http\Controllers\Admin\Questionnaires\TransferController;
@@ -35,16 +37,27 @@ use App\Http\Controllers\Admin\Questionnaires\ReadmissionController;
 |
 */
 
+Route::get('/phpinfo', function() {
+    return phpinfo();
+});
+
 Route::get('/', [IndexController::class, 'index']);
 Route::get('/about-us', [IndexController::class, 'about']);
 Route::get('/dashboard', [IndexController::class, 'dashboardNormal']);
 Route::get('/contact-us', [NormalContactUsController::class, 'contact']);
 Route::post('/contact-us', [NormalContactUsController::class, 'contactUsStore'])->name('contact-us.submit');
-Route::get('/announcements', [NormalAnnouncementController::class, 'announcement']);
+Route::get('/guidance-announcement', [NormalAnnouncementController::class, 'announcement']);
 Route::get('/view-activities', [NormalActivityController::class, 'activities']);
 Route::get('/services', [IndexController::class, 'services']);
 Route::get('/check-appointment', [SetAppointmentController::class, 'index']);
 Route::post('/check-appointment', [SetAppointmentController::class, 'checkAppointment'])->name('appointment.checkStudent');
+
+
+Route::get('/check-feedback', [NormalFeedbackController::class, 'index']);
+Route::post('/check-feedback', [NormalFeedbackController::class, 'checkFeedback'])->name('feedback.checkFeedback');
+Route::get('/give-feedback/{studentId}', [NormalFeedbackController::class, 'giveFeedback'])->name('normal-view.pages.feedback');
+Route::post('/give-feedback', [NormalFeedbackController::class, 'store'])->name('feedback.set');
+
 Route::get('/set-appointment/{studentId}', [SetAppointmentController::class, 'setAppointment'])->name('normal-view.pages.appointment');
 Route::post('/set-appointment', [SetAppointmentController::class, 'store'])->name('appointment.set');
 
@@ -137,6 +150,8 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
     Route::put('admin/update-profile/{id}', [Admin_ProfileController::class, 'update_profile'])->name('admin.change_profile');
     Route::get('admin/change-password/{id}', [Admin_ChangePasswordController::class, 'index'])->name('admin.change_password.index');
     Route::post('admin/change-password', [Admin_ChangePasswordController::class, 'change_password'])->name('admin.change_password');
+
+    Route::get('admin/logs', [LogsController::class, 'index']);
 
 });
 Route::group(['middleware' => ['auth', 'role:user']], function () {

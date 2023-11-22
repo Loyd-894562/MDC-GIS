@@ -49,7 +49,7 @@
                     @endif
 
                 </div>
-                <form action="{{ route('appointment.checkStudent') }}" method="post">
+                <form action="{{ route('feedback.checkFeedback') }}" method="post">
                     @csrf
                     <label for="id_number">Student ID:</label>
                     <input type="text" name="id_number" required>

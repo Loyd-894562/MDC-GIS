@@ -28,8 +28,9 @@
                     <tr>
                         <th class="px-4 py-2 bg-gray-100 border-b border-gray-300">ID</th>
                         <th class="px-4 py-2 bg-gray-100 border-b border-gray-300">Title</th>
-                        <th class="px-4 py-2 bg-gray-100 border-b border-gray-300">Description</th>
+
                         <th class="px-4 py-2 bg-gray-100 border-b border-gray-300">Image</th>
+                        <th class="px-4 py-2 bg-gray-100 border-b border-gray-300">Description</th>
                         <th class="px-4 py-2 bg-gray-100 border-b border-gray-300">Action</th>
                     </tr>
                 </thead>

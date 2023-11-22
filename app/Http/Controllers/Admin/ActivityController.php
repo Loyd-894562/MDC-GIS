@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Activity;
+use App\Models\Adminactivity;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
@@ -11,11 +11,11 @@ use Illuminate\Support\Facades\Log;
 class ActivityController extends Controller
 {
     public function activities(){
-        $activities = Activity::all();
+        $activities = Adminactivity::all();
         return view('admin.pages.activities.activities', compact('activities'));
     }
 
-public function store(Request $request, Activity $activity)
+public function store(Request $request, Adminactivity $activity)
 {
     try {
         $validatedData = $request->validate([
@@ -48,7 +48,7 @@ public function store(Request $request, Activity $activity)
 
     public function edit($id)
     {
-        $activity = Activity::findOrFail($id);
+        $activity = Adminactivity::findOrFail($id);
         return view('activities.update', compact('activity'));
     }
 
@@ -60,7 +60,7 @@ public function store(Request $request, Activity $activity)
         'description' => 'required|string',
     ]);
 
-    $activity = Activity::findOrFail($id);
+    $activity = Adminactivity::findOrFail($id);
 
     if ($request->hasFile('image')) {
         $image = $request->file('image');
@@ -89,7 +89,7 @@ public function store(Request $request, Activity $activity)
 
     public function destroy($id)
     {
-        $act = Activity::findOrFail($id);
+        $act = Adminactivity::findOrFail($id);
         $act->delete();
         return redirect()->route('activities.activities')->with('success', 'Task deleted successfully.');
     }

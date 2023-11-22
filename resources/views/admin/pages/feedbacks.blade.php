@@ -14,7 +14,6 @@
                 <thead>
                     <tr>
                         <th class="px-4 py-2 bg-gray-100 border-b border-gray-300">ID No.</th>
-                        <th class="px-4 py-2 bg-gray-100 border-b border-gray-300">Full Name</th>
                         <th class="px-4 py-2 bg-gray-100 border-b border-gray-300">Feedback</th>
                         <th class="px-4 py-2 bg-gray-100 border-b border-gray-300">Date</th>
 
@@ -24,7 +23,6 @@
                     @foreach ($feedbacks as $feedback)
                         <tr class="hover:bg-gray-100 {{ $loop->iteration % 2 === 0 ? 'bg-gray-100' : '' }}">
                             <td class="px-4 py-2 border-b border-gray-300">{{ $feedback->id }}</td>
-                            <td class="px-4 py-2 border-b border-gray-300">{{ $feedback->user->name }}</td>
                             <td class="px-4 py-2 border-b border-gray-300">{{ $feedback->feedback }}</td>
                             <td class="px-4 py-2 border-b border-gray-300">{{ $feedback->created_at->format('F j, Y') }} -
                                 <span class="italic text-gray-500">{{ $feedback->created_at->diffForHumans() }}</span>

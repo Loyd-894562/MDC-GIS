@@ -1,7 +1,5 @@
 @extends('normal-view.layout.base')
 
-@include('normal-view.layout.navbar')
-
 @section('title')
     About Us
 @endsection

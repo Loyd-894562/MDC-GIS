@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\User;
 use App\Models\Contact;
-use App\Models\Activity;
 use App\Models\Feedback;
 use App\Models\Appointment;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
+use App\Models\Adminactivity;
 use App\Http\Controllers\Controller;
 
 class AdminIndexController extends Controller
@@ -20,7 +20,7 @@ class AdminIndexController extends Controller
     {
         $countA = Announcement::count();
         $countM = Contact::count();
-        $countAct = Activity::count();
+        $countAct = Adminactivity::count();
         $countF = Feedback::count();
         $countAppt = Appointment::count();
         $countUsers = User::count();

@@ -10,14 +10,17 @@ use App\Models\Announcement;
 use App\Models\Questionnaire;
 use App\Models\CounselingForm;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Activitylog\LogOptions;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
+use Spatie\Activitylog\Traits\LogsActivity;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, HasRoles;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles, LogsActivity;
 
     /**
      * The attributes that are mass assignable.
@@ -59,10 +62,6 @@ class User extends Authenticatable
     {
         return $this->roles()->where('id', 2)->exists();
     }
-
-    public function feedbacks(){
-        return $this->hasMany(Feedback::class);
-    }
     public function announcements(){
         return $this->hasMany(Announcement::class);
     }
@@ -79,4 +78,13 @@ class User extends Authenticatable
     public function transfers(){
         return $this->hasMany(Questionnaire::class);
     }
+
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults()
+        ->logOnly(['name'])
+        ->setDescriptionForEvent(fn(string $eventName) => "A user has been {$eventName}")
+        ->logOnlyDirty();
+    }
+
 }
