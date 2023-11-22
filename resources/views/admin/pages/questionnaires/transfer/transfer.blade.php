@@ -1,7 +1,7 @@
 @extends('admin.layout.base')
 
 @section('content-header')
-    <h2 class="text-2xl font-semibold text-gray-800 mb-4">transfer Forms</h2>
+    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Transfer Forms</h2>
 @endsection
 
 @section('content')
