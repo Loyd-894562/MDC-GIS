@@ -15,41 +15,34 @@
             margin: 0 auto;
             padding: 10px;
             background-color: #fff;
+            text-align: center;
         }
 
         .title {
             font-size: 24px;
             font-weight: bold;
-            text-align: center;
             margin-bottom: 20px;
         }
 
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            margin-bottom: 10px;
+        .header-img {
+            max-width: 50%;
+            height: auto;
+            margin: 20px auto; /* Center image using margin */
+            display: block;
         }
 
-        .col {
-            flex: 1;
-            margin-right: 10px;
+        hr {
+            margin: 20px auto; /* Center hr */
+            width: 50%;
         }
 
-        .label {
-            font-weight: bold;
-            margin-bottom: 5px;
+        table {
+            width: 100%;
         }
 
-        .content {
-            border: 1px solid #ccc;
+        th, td {
             padding: 10px;
-            margin-bottom: 10px;
-        }
-
-        .border-dark {
-            border: 1px solid #000;
-            padding: 10px;
-            margin-top: 10px;
+            text-align: left;
         }
 
         .text-underline {
@@ -57,137 +50,114 @@
             font-weight: 100;
         }
 
-        label {
-            display: inline-block;
-            margin-right: 15px;
-        }
-
-        input[type="checkbox"] {
-            margin-right: 5px;
-        }
-
         .text-center {
             text-align: center;
         }
 
-        .header-img {
-            max-width: 50%;
-            height: auto;
-            margin: 10px auto;
-            display: block;
+        .label {
+            font-weight: bold;
+        }
+
+        .left-align {
+            text-align: left;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <img src="{{ public_path('images/header.png') }}" alt="Header Photo" class="header-img"
-            style="max-width: 50%; height: auto; margin: 20px auto; display: block;">
+        <img src="{{ public_path('images/header.png') }}" alt="Header Photo" class="header-img">
         <hr>
         <p class="title">COUNSELING FORM</p>
 
-        <div class="row">
-            <div class="col">
-                <div class="label">Name of Student: <span class="text-underline"> {{ $counseling->student_name }}</span></div>
+        <table>
+            <tr>
+                <th>Name of Student:</th>
+                <td class="text-underline">{{ $counseling->student_name }}</td>
 
-            </div>
-            <div class="col">
-                <div class="label">Date: <span class="text-underline">{{ $counseling->date }} </span></div>
+            </tr>
+            <tr>
+                <th>Date:</th>
+                <td class="text-underline">{{ $counseling->date }}</td>
+                <th>Course and Year:</th>
+                <td class="text-underline">{{ $counseling->course_year }}</td>
 
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <div class="label">Course and Year: <span class="text-underline"> {{ $counseling->course_year }}</span></div>
+            </tr>
+            <tr>
+                <th>Department:</th>
+                <td class="text-underline">{{ $counseling->department }}</td>
+                <th>Contact number:</th>
+                <td class="text-underline">{{ $counseling->contact_num }}</td>
+            </tr>
+        </table>
 
-            </div>
-            <div class="col">
-                <div class="label">Department: <span class="text-underline">{{ $counseling->department }} </span></div>
-
-            </div>
-            <div class="col">
-                <div class="label">Contact number: <span class="text-underline"{{ $counseling->contact_num }}> </span></div>
-
-            </div>
-        </div>
-
-        <div>
+        <div class="left-align">
             <div class="label">Nature of Visit</div>
-            <label>
-                <input type="checkbox" name="visit_nature" value="Referral"
-                    {{ $counseling->visit_nature === 'Referral' ? 'checked' : '' }}>
-                Referral
-            </label>
-            <label>
-                <input type="checkbox" name="visit_nature" value="Walk-in"
-                    {{ $counseling->visit_nature === 'Walk-in' ? 'checked' : '' }}>
-                Walk-in
-            </label>
+            {{ $counseling->visit_nature }}
         </div>
-
-        <div class="label">Problem(s)/Concern(s)</div>
-        <div class="content">{{ $counseling->concern }}</div>
-
-        <div class="label">Action Taken/Recommendation(s)</div>
-        <div class="content">{{ $counseling->action_taken }}</div>
-
-        <div class="row">
-            <div class="col">
-                <div class="label">Follow up Dates</div>
-                <div class="content">{{ $counseling->followup_dates }}</div>
-            </div>
+        <br>
+        <div class="left-align">
+            <div class="label">Problem(s)/Concern(s)</div>
+            <div class="content">{{ $counseling->concern }}</div>
         </div>
-
-        <div class="row">
-            <div class="col">
-                @if ($counseling->counselee)
-                    <div class="text-center"><u>{{ $counseling->counselee }}</u></div>
-                @else
-                    <u>&nbsp;&nbsp;</u>
-                @endif
-
-                <div class="label text-center">Counselee</div>
-            </div>
-            <div class="col">
-                @if ($counseling->counselor)
-                    <div class="text-center"><u>{{ $counseling->counselor }}</u></div>
-                @else
-                    <u>&nbsp;&nbsp;</u>
-                @endif
-
-                <div class="label text-center">Counselor</div>
-            </div>
+        <br><br>
+        <div class="left-align">
+            <div class="label">Action Taken/Recommendation(s)</div>
+            <div class="content">{{ $counseling->action_taken }}</div>
         </div>
-        {{-- <div style="page-break-before: always;"></div> --}}
+        <br>
+        <div class="left-align">
+            <div class="label">Follow up Dates: {{ $counseling->followup_dates }}</div>
+        </div>
+        <br><br>
+        <table>
+            <tr>
+                <td class="text-center">
+                    @if ($counseling->counselee)
+                        <u>{{ $counseling->counselee }}</u>
+                    @else
+                        <u>&nbsp;&nbsp;</u>
+                    @endif
+                </td>
+
+                <td class="text-center">
+                    @if ($counseling->counselor)
+                        <u>{{ $counseling->counselor }}</u>
+                    @else
+                        <u>&nbsp;&nbsp;</u>
+                    @endif
+                </td>
+
+            </tr>
+            <tr>
+                <th class="text-center">Counselee</th>
+                <th class="text-center">Counselor</th>
+            </tr>
+        </table>
+        <hr>
         <div class="border-dark">
             <p class="title">COUNSELING SLIP</p>
-            <div class="row">
-                <div class="col">
-                    <div class="label">Name of Student: <span
-                            class="text-underline">{{ $counseling->student_name }}</span></div>
-                </div>
-                <div class="col">
-                    <div class="label">Date: <span class="text-underline">{{ $counseling->date }}</span></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="label">Course and Year: <span
-                            class="text-underline">{{ $counseling->course_year }}</span></div>
-                </div>
-                <div class="col">
-                    <div class="label">Department: <span
-                            class="text-underline">{{ $counseling->department }}</span></div>
-                </div>
-                <div class="col">
-                    <div class="label">Contact number: <span
-                            class="text-underline">{{ $counseling->contact_num }}</span></div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="label">Session Ended: <span
-                        class="text-underline">{{ $counseling->session_ended }}</span></div>
-            </div>
+            <table>
+                <tr>
+                    <th>Name of Student:</th>
+                    <td class="text-underline">{{ $counseling->student_name }}</td>
+                    <th>Date:</th>
+                    <td class="text-underline">{{ $counseling->date }}</td>
+                </tr>
+                <tr>
+                    <th>Course and Year:</th>
+                    <td class="text-underline">{{ $counseling->course_year }}</td>
+                    <th>Department:</th>
+                    <td class="text-underline">{{ $counseling->department }}</td>
+
+                </tr>
+                <tr>
+                    <th>Contact number:</th>
+                    <td class="text-underline">{{ $counseling->contact_num }}</td>
+                    <th>Session Ended:</th>
+                    <td class="text-underline">{{ $counseling->session_ended }}</td>
+                </tr>
+            </table>
         </div>
     </div>
 </body>

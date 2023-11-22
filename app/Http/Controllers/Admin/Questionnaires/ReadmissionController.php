@@ -92,7 +92,7 @@ public function downloadPDF($id) {
     $readmission = Readmission::findOrFail($id);
 
     $pdf = PDF::loadView('admin.pages.questionnaires.readmission.readmission-pdf', compact('readmission'));
-    $pdf->setPaper('Letter', 'portrait');
+    $pdf->setPaper('Folio', 'portrait');
     return $pdf->download('readmission_form.pdf');
 }
 

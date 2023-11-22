@@ -78,7 +78,7 @@ public function downloadPDF($id) {
     $transfer = Questionnaire::findOrFail($id);
 
     $pdf = PDF::loadView('admin.pages.questionnaires.transfer.transfer-pdf', compact('transfer'));
-    $pdf->setPaper('Letter', 'portrait');
+    $pdf->setPaper('Folio', 'portrait');
     return $pdf->download('transfer_form.pdf');
 }
 

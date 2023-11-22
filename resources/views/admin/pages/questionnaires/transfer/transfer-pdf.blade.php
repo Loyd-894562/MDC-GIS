@@ -15,6 +15,7 @@
             margin: 0 auto;
             padding: 10px;
             background-color: #fff;
+            text-align: center;
         }
 
         .title {
@@ -76,31 +77,30 @@
             margin: 10px auto;
             display: block;
         }
+        .left-align {
+            text-align: left;
+        }
     </style>
 </head>
 
 <body>
-    <div class="mt-5">
-        <p class="text-xl mb-2 text-center text-bold italic">
+    <div class="container mt-5">
+        <img src="{{ public_path('images/header.png') }}" alt="Header Photo" class="header-img" style="text-align: center;">
+        <hr>
+        <p style="font-weight:bold;">
             EXIT QUESTIONNAIRE
         </p>
-        <div class="mx-auto p-4 bg-white shadow-md rounded-lg">
-            <p><span class="font-bold">Name: </span> {{ Auth::user()->name }}</p>
-            <p><span class="font-bold">Date filled: </span>{{ now()->format('l, F j, Y') }}</p>
-            <p><span class="font-bold">ID Number: </span> {{ Auth::user()->id_number }}</p>
-            <p><span class="font-bold">Sex: </span> {{ Auth::user()->gender }}</p>
-            <div class="row">
-                <div class="col">
-                    <p><span class="font-bold">Last Attendance (Semester & AY): </span><input type="text" name="last_semester" id="last_semester" value="{{$transfer->last_semester}}" class="w-full px-3 py-2 border rounded-lg"></p>
-                </div>
-                <div class="col">
-                    <p><span class="font-bold">Course and year: </span><input type="text" name="course_year" id="course_year" class="w-full px-3 py-2 border rounded-lg" value="{{$transfer->course_year}}"></p>
-                </div>
-            </div>
+        <div class="mx-auto p-4 bg-white shadow-md rounded-lg left-align">
+            <p style="display: inline-block;"><span style="font-weight: bold">Name:  </span> <u>{{ Auth::user()->name }} </u></p>
+            <p style="display: inline-block; margin-left: 100px;"><span style="font-weight: bold">ID Number: </span> <u>{{ Auth::user()->id_number }}</u></p>
 
+            <p><span style="font-weight: bold">Date filled: </span> <u>{{ now()->format('F j, Y') }}</u></p>
+            <p style="display: inline-block;"><span style="font-weight: bold">Course and year: </span> <u>{{$transfer->course_year}} </u></p>
+            <p style="display: inline-block; margin-left: 100px;"><span style="font-weight: bold">Sex: </span> <u>{{ Auth::user()->gender }}</u></p>
+            <p><span style="font-weight: bold">Last Attendance (Semester & AY): </span><u>{{$transfer->last_semester}}</u></p>
             <hr>
 
-            <p><span class="font-bold">REASONS FOR LEAVING MATER DEI COLLEGE </span> (please check as many as applicable):<br>
+            <p><span style="font-weight: bold">REASONS FOR LEAVING MATER DEI COLLEGE </span> (please check as many as applicable):<br>
             <div class="row">
                 <div class="col">
                     <label>
@@ -169,15 +169,17 @@
             <label>
                 <input type="checkbox" name="reason[]" value="Other Reasons">
                 Other Reasons (please specify):
-                <input type="text" name="other_reason" placeholder="Specify other reason" value="{{$transfer->other_reason}}">
+                <u>{{$transfer->other_reason}}</u>
+
             </label><br>
 
-            <p><span class="font-bold">RECOMMENDATIONS: </span><input type="text" name="recommendations" id="recommendations" class="w-full px-3 py-2 border rounded-lg" value="{{$transfer->recommendations}}"></p>
-            <p><span class="font-bold">NAME OF SCHOOL THAT YOU ARE TRANSFERRING TO:</span> <input type="text" name="transfer_school" id="transfer_school" class="w-full px-3 py-2 border rounded-lg" value="{{$transfer->transfer_school}}"></p>
-            <p><span class="font-bold">ADDRESS OF SCHOOL: </span><input type="text" name="transfer_school_address" id="transfer_school_address" class="w-full px-3 py-2 border rounded-lg mb-4" value="{{$transfer->transfer_school_address}}"></p>
+            <p><span style="font-weight: bold">RECOMMENDATIONS: </span>{{$transfer->recommendations}}</p>
+            <p><span style="font-weight: bold">NAME OF SCHOOL THAT YOU ARE TRANSFERRING TO: </span>{{$transfer->transfer_school}}</p>
+            <p><span style="font-weight: bold">ADDRESS OF SCHOOL:</span> {{$transfer->transfer_school_address}}</p>
 
-            <u style="text-align: center">{{ Auth::user()->name }}</u>
-            <p style="text-align: center">       (Signature over Printed Name)</p>
+                <br><br><br>
+            <p style="text-align: center"><u >{{ Auth::user()->name }}</u></p>
+            <p style="text-align: center">(Signature over Printed Name)</p>
         </div>
     </div>
 </body>
