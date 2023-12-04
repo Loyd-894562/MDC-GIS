@@ -1,7 +1,5 @@
 @extends('normal-view.layout.base')
 
-{{-- @extends('normal-view.layout.dashboard') --}}
-
 @section('title')
     Check ID number
 @endsection
@@ -9,7 +7,7 @@
 @section('content')
     <div class="container mx-auto md:p-10">
         <div class="flex items-center justify-center mt-10">
-            <div class="max-w-[700px] bg-white shadow-lg rounded-lg overflow-hidden px-20">
+            <div class="max-w-md w-full bg-white shadow-lg rounded-lg overflow-hidden">
                 <div class="p-4">
                     @if (session('error'))
                         <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
@@ -49,11 +47,24 @@
                     @endif
 
                 </div>
-                <form action="{{ route('appointment.checkStudent') }}" method="post">
+                <form action="{{ route('appointment.checkStudent') }}" method="post" class="p-4">
                     @csrf
-                    <label for="id_number">Student ID:</label>
-                    <input type="text" name="id_number" required>
-                    <button type="submit">Enter</button>
+                    <div class="mb-4">
+                        <label for="id_number" class="block text-gray-700 font-bold mb-2">Student ID:</label>
+                        <input type="text" name="id_number" required
+                            class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" />
+                    </div>
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 font-bold mb-2">Name:</label>
+                        <input type="text" name="name" required
+                            class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" />
+                    </div>
+                    <div class="flex justify-center">
+                        <button type="submit"
+                            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                            Enter
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>

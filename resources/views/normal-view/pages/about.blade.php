@@ -6,16 +6,17 @@
 
 @section('content')
     <div class="container mx-auto p-4">
-        <div class="flex items-center justify-center mt-10">
+        <div class="flex flex-col items-center justify-center mt-10">
 
             <div class="max-w-[900px] bg-info shadow-lg rounded-lg overflow-hidden">
+
                 <h1 class="text-4xl font-bold text-2xl mb-4 text-indigo-900 text-center">
                     About Us
                 </h1>
 
-                <div class="card">
-                    <div class="p-4 bg-blue-400 bg-opacity-75 rounded-md mb-4">
-                        <h1 class="font-bold text-2xl text-start">VISION</h1>
+                <div class="card mb-4 sm:flex">
+                    <div class="p-4 bg-blue-400 bg-opacity-75 rounded-md">
+                        <h1 class="font-bold text-2xl text-start mb-2 sm:mb-0 sm:mr-4">VISION</h1>
                         <p class="text-justify text-l">
                             The Guidance Office of Mater Dei College is an office where a helping relationship exists between
                             students, counsellor and stakeholders in order to sustain and enhance a harmonious relationship that
@@ -24,9 +25,9 @@
                     </div>
                 </div>
 
-                <div class="card">
-                    <div class="p-4 bg-blue-400 bg-opacity-75 rounded-md mb-4">
-                        <h1 class="font-bold text-2xl text-end">MISSION</h1>
+                <div class="card mb-4 sm:flex">
+                    <div class="p-4 bg-blue-400 bg-opacity-75 rounded-md">
+                        <h1 class="font-bold text-2xl text-end mb-2 sm:mb-0 sm:mr-4">MISSION</h1>
                         <p class="text-justify text-l">
                             The Guidance Office develops students’ self-awareness thereby promoting understanding of self and
                             others through counselling programs and other guidance service that promote positive students’
@@ -35,9 +36,9 @@
                     </div>
                 </div>
 
-                <div class="card">
-                    <div class="p-4 bg-blue-400 bg-opacity-75 rounded-md mb-4">
-                        <h1 class="font-bold text-2xl">GOALS</h1>
+                <div class="card mb-4">
+                    <div class="p-4 bg-blue-400 bg-opacity-75 rounded-md">
+                        <h1 class="font-bold text-2xl mb-2">GOALS</h1>
                         <p class="text-justify text-l">
                             The Guidance Services aims to: <br>
                             1. Help students in formulating goals for self-direction; <br>
@@ -48,6 +49,16 @@
                             aspirations; and <br>
                             5. Conduct activities that enable them to attain total human formation.
                         </p>
+                    </div>
+                </div>
+
+                <div class="flex">
+                    <div class="card mb-4 flex-1">
+                        <img src="{{ asset('images/about1.jpg') }}" alt="" class="img-fluid w-full h-auto">
+                    </div>
+
+                    <div class="card mb-4 flex-1">
+                        <img src="{{ asset('images/about2.jpg') }}" alt="" class="img-fluid w-full h-auto">
                     </div>
                 </div>
 

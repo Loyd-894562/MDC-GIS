@@ -31,9 +31,11 @@
                 @endforeach
 
                 @if ($announcements->count() === 0)
-                    <p class="text-center mt-3">
+                <div class="max-w-2xl mx-auto p-10">
+                    <p class="text-center mt-3 text-2xl font-bold text-gray-800">
                         No announcements found yet. Please stay tuned!
                     </p>
+                </div>
                 @endif
                 <div class="my-4">
                     {{ $announcements->links('normal-view.layout.pagination') }}

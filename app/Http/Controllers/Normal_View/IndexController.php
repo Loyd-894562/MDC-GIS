@@ -12,9 +12,12 @@ class IndexController extends Controller
      */
     public function index()
     {
-        if (auth()->check()) {
-            view('normal-view.pages.home');
-        }
+        // if (auth()->check()) {
+        //     view('normal-view.pages.home');
+        // }
+        // return view('normal-view.pages.home');
+
+
         return view('normal-view.pages.home');
     }
     public function dashboardNormal()

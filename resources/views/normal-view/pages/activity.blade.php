@@ -1,13 +1,13 @@
 @extends('normal-view.layout.base')
 
 @section('title')
-Activities
+    Activities
 @endsection
 
 @section('content')
     <div class="container mx-auto p-4">
         <div class="flex items-center justify-center mt-10">
-            <div class="max-w-4xl bg-white shadow-lg rounded-lg overflow-hidden p-2">
+            <div class="max-w-7xl bg-white shadow-lg rounded-lg overflow-hidden p-2">
                 {{-- <div class="bg-cover bg-center h-64 p-4" style="background-image: url('/images/bg2.png')"></div> --}}
                 <div class="p-5">
                     <p class="md:text-4xl text-center font-extrabold text-indigo-900">
@@ -29,10 +29,13 @@ Activities
                 @endforeach
 
                 @if ($activities->count() === 0)
-                    <p class="text-center mt-3">
-                        No activities found yet. Please stay tuned!
-                    </p>
+                    <div class="max-w-2xl mx-auto p-10">
+                        <p class="text-center mt-3 text-2xl font-bold text-gray-800">
+                            No activities found yet. Please stay tuned!
+                        </p>
+                    </div>
                 @endif
+
                 <div class="my-4">
                     {{ $activities->links('normal-view.layout.pagination') }}
                 </div>

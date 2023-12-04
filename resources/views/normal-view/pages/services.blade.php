@@ -7,7 +7,7 @@
 @section('content')
     <div class="container mx-auto p-4">
         <div class="flex items-center justify-center mt-5">
-            <div class="max-w-6xl bg-white shadow-lg rounded-lg overflow-hidden overflow-y-auto h-100" style="height: 500px">
+            <div class="max-w-6xl bg-blue-500 bg-opacity-75 shadow-lg rounded-lg overflow-hidden overflow-y-auto h-100" style="height: 500px">
                 {{-- <div class="bg-cover bg-center h-64 p-4" style="background-image: url('/images/bg2.png')"></div> --}}
                 <div class="p-4">
                     <h1 class="text-4xl font-bold mb-4 text-indigo-900 text-center">
@@ -16,7 +16,7 @@
                     <p>GUIDANCE COUNSELOR DUTIES AND RESPONSIBILITIES
                         <br>
                         Under the supervision of the Vice President for Administration and Finance, and the Director of Student Affairs and Services, the duties of the Guidance Counselor are the following:
-<br>
+                        <br>
                         <br> 1. Develops a comprehensive guidance program for the entire school geared towards the optimum development of its clientele;
                         <br> 2. Establishes policies, procedures, and guidelines for the implementation of the guidance services;
                         <br> 3. Promotes research design to address the students’ needs and to further improve the guidance program and services;
@@ -45,7 +45,7 @@
                         <br> 6. Conducts research and evaluation to determine the effectiveness of strategies and services implemented;
                         <br>7. Coordinates and/or runs enrichment programs for students and parents;
                         <br> 8. Performs other functions as mandated by the President or the Director of Student Services, and the Guidance Counselor.
-                        </p>
+                    </p>
                 </div>
             </div>
         </div>
