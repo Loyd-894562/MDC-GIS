@@ -18,7 +18,7 @@
                     </div>
                     <div class="mt-5">
                         <p class="text-gray-800 text-4xl font-extrabold" style="font-family: sans-serif;">
-                            <strong class="font-extrabold">WELCOME TOMDC GUIDANCE</strong><br /><strong>INFORMATION SYSTEM</strong>
+                            <strong class="font-extrabold">WELCOME TO MDC GUIDANCE</strong><br /><strong>INFORMATION SYSTEM</strong>
                         </p>
                     </div>
                     <p class="mt-5 text-2xl font-extrabold text-gray-800"

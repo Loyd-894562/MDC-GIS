@@ -13,27 +13,41 @@
     <title>MDC-GIS-SHS | @yield('title')</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
-
-<body class="antialiased bg-black hold-transition sidebar-mini layout-fixed layout-navbar-fixed"
-    style="
-            background-image: url('/images/background.jpg');
-            background-repeat: no-repeat;
-            background-size: 100%;
-        ">
-@include('normal-view.layout.navbar')
-    <div class="wrapper py-8 px-4 lg:px-0">
-        @yield('content')
-
-    </div>
-    @yield('scripts')
-</body>
-
-</html>
-
 <style>
+    body {
+        background-image: url('/images/background.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        margin: 0; /* Reset body margin */
+        padding: 0; /* Reset body padding */
+    }
+
     @media (max-width: 640px) {
         body {
             background-size: 1000px auto !important;
         }
     }
+
+    .wrapper {
+        min-height: 100vh;
+    }
 </style>
+<body class="antialiased">
+    @include('normal-view.layout.navbar')
+    <div class="wrapper py-8 px-4 lg:px-0">
+        @yield('content')
+    </div>
+    @yield('scripts')
+</body>
+
+
+</html>
+{{--
+<style>
+    @media (max-width: 640px) {
+        /* body {
+            background-size: 1000px auto !important;
+        } */
+    }
+</style> --}}
