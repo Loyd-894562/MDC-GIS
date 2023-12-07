@@ -23,13 +23,15 @@ public function store(Request $request, Appointment $appointment)
     try {
         $validatedData = $request->validate([
             'fullname' => 'required|string|max:255',
-            'date' => 'required|date',
-            'time' => 'required|date_format:H:i',
+            'email' => 'required|string',
+            'date' => 'required|string',
+            'time' => 'required|string',
             'reason' => 'required|string',
         ]);
 
         $appointment->fullname = $validatedData['fullname'];
-        $appointment->user_id = Auth::id();
+        // $appointment->user_id = Auth::id();
+        $appointment->email = $validatedData['email'];
         $appointment->date = $validatedData['date'];
         $appointment->time = $validatedData['time'];
         $appointment->reason = $validatedData['reason'];
@@ -53,18 +55,22 @@ public function store(Request $request, Appointment $appointment)
     {
         $validatedData = $request->validate([
             'fullname' => 'required|string|max:255',
-            'date' => 'required|date',
-            'time' => 'required|date_format:H:i',
+            'email' => 'required|string',
+            'date' => 'required|string',
+            'time' => 'required|string',
             'reason' => 'required|string',
         ]);
 
         $appointment = Appointment::findOrFail($id);
 
         $appointment->fullname = $validatedData['fullname'];
+        // $appointment->user_id = Auth::id();
+        $appointment->email = $validatedData['email'];
         $appointment->date = $validatedData['date'];
         $appointment->time = $validatedData['time'];
         $appointment->reason = $validatedData['reason'];
         $appointment->save();
+
 
         return redirect()->route('appointments.appointments')->with('success', 'Appointment updated successfully.');
     }

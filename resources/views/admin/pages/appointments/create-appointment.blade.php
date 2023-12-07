@@ -26,6 +26,17 @@
                         @enderror
                     </div>
                     <div class="mb-4 mt-2">
+                        <label for="title" class="block text-gray-700 font-semibold mb-2">Email</label>
+                        <input type="email" name="email" id="email" class="w-full px-3 py-2 border rounded-lg"
+                            placeholder="Enter your email">
+
+                        @error('email')
+                            <div class="text-sm text-red-500 italic">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="mb-4 mt-2">
                         <label for="title" class="block text-gray-700 font-semibold mb-2">Date</label>
                         <input type="date" name="date" id="date" class="w-full px-3 py-2 border rounded-lg"
                             placeholder="Enter title">

@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('questionnaire_interviews', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->string('fullname');
+            $table->string('program');
+            $table->string('id_number');
             $table->string('academic_year');
             $table->string('feeling');
             $table->longText('plans');
@@ -25,8 +27,7 @@ return new class extends Migration
             $table->longText('suggestion');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users')
-            ->onUpdate('cascade');
+
         });
     }
 

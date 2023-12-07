@@ -17,8 +17,9 @@ class NormalFeedbackController extends Controller
     }
     public function checkFeedback(Request $request){
         $studentId = $request->input('id_number');
+        $studentName = $request->input('name');
 
-        $student = User::where('id_number', $studentId)->first();
+        $student = User::where('id_number', $studentId)->where('name', $studentName)->first();
 
         if ($student) {
 

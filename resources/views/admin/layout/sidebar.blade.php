@@ -1,12 +1,12 @@
 <div>
-    <div class="wrapper">
+    <div class="wrapper" >
         <nav class="main-header navbar navbar-expand navbar-light">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
                 </li>
             </ul>
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto" >
                 <li class="nav-item mr-3">
                     <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">
@@ -35,7 +35,7 @@
                 </li>
             </ul>
         </nav>
-        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #032a6d;">
             <a href="/admin/dashboard" class="brand-link">
                 <img src="/images/logo.png" alt="MDC logo" class="brand-image img-circle elevation-0"
                     style="opacity: .8; border-radius: 50%;">
@@ -110,8 +110,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/users"
-                                class="nav-link {{ 'admin/users' == request()->path() ? 'active2' : '' }}">
+                            <a href="/admin/student-inventory"
+                                class="nav-link {{ 'admin/student-inventory' == request()->path() ? 'active2' : '' }}">
                                 <i class="nav-icon fa-solid fa-inbox"></i>
                                 <p>
                                     Student Inventory
