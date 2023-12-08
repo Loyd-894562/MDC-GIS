@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\Appointment;
 use Illuminate\Http\Request;
+use App\Mail\AppointmentCreated;
+use App\Mail\AppointmentApproved;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class AppointmentController extends Controller
 {
@@ -36,7 +39,7 @@ public function store(Request $request, Appointment $appointment)
         $appointment->time = $validatedData['time'];
         $appointment->reason = $validatedData['reason'];
         $appointment->save();
-
+        Mail::to($appointment->email)->send(new AppointmentCreated($appointment));
         return redirect()->route('appointments.store')->with('success', 'Appointment created successfully.');
     } catch (\Exception $e) {
         // Handle exceptions here (e.g., log the error)
@@ -89,7 +92,7 @@ public function store(Request $request, Appointment $appointment)
         $appointment = Appointment::findOrFail($id);
         $appointment->status = 1;
         $appointment->save();
-
+        Mail::to($appointment->email)->send(new AppointmentApproved($appointment));
         return redirect()->route('appointments.appointments')->with('success', 'APPOINTMENT APPROVED');
     }
 

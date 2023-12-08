@@ -30,7 +30,7 @@
                         Take the test to find the perfect who you are
                     </p>
                     <br />
-                    <a v-if="!auth.user" href="/login"
+                    <a v-if="!auth.user" href="/dashboard"
                         class="bg-sky-500 text-white py-3 font-bold px-10 rounded-md hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
                         style="border-radius: 20px;">Getting Started</a>
                 </div>

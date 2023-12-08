@@ -44,10 +44,9 @@
 
         <p>Dear {{ $appointment->fullname }},</p>
 
-        <p>Your appointment has been forwarded to the Guidance Office scheduled for {{ $appointment->date }} at {{ $appointment->time }}.</p>
+        <p>Your appointment has been approved! Your schedule is {{ $appointment->date }} at {{ $appointment->time }}.</p>
 
-        <p>Reason: {{ $appointment->reason }}</p>
-        <p>We'll email you again if your appointment is approved</p>
+<p>Please see to it to be at the office on time</p>
 
         <div class="footer">
             <p>This is an automated email. Please do not reply to this message.</p>

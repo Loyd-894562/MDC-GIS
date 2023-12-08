@@ -1,7 +1,7 @@
 <div>
-    <div class="w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800">
+    <div class="w-full text-white-700 bg-white dark-mode:text-white-200 dark-mode:bg-gray-800">
 
-        <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #032a6d;>
+        <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #032a6d;">
 
             <div class="sidebar">
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
@@ -26,7 +26,7 @@
                             </a>
                         </li>
 
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="contact-us"
                                 class="nav-link {{ '/contact-us' == request()->path() ? 'active2' : '' }}">
                                 <i class="nav-icon fa-solid fa-bullhorn"></i>
@@ -34,8 +34,8 @@
                                     Give Feedback
                                 </p>
                             </a>
-                        </li>
-                        <li class="nav-item">
+                        </li> --}}
+                        {{-- <li class="nav-item">
                             <a href="#"
                                 class="nav-link {{ '/dashboard' == request()->path() ? 'active2' : '' }}">
                                 <i class="nav-icon fa-solid fa-inbox"></i>
@@ -52,7 +52,7 @@
                                     Set Appointment
                                 </p>
                             </a>
-                        </li>
+                        </li> --}}
                         {{-- <li class="nav-item">
                             <a href="#"
                                 class="nav-link {{ 'admin/chats' == request()->path() ? 'active2' : '' }}">
@@ -62,7 +62,7 @@
                                 </p>
                             </a>
                         </li> --}}
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="#"
                                 class="nav-link {{ 'admin/activities' == request()->path() ? 'active2' : '' }}">
                                 <i class="nav-icon fa-solid fa-inbox"></i>
@@ -70,8 +70,8 @@
                                     Activities
                                 </p>
                             </a>
-                        </li>
-                        <li class="nav-item menu-close">
+                        </li> --}}
+                        {{-- <li class="nav-item menu-close">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fa-solid fa-list"></i>
                                 <p>
@@ -87,7 +87,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
                         <li class="nav-header">SETTING MANAGEMENT</li>
                         <li class="nav-item menu-open">
                             <a href="#" class="nav-link">

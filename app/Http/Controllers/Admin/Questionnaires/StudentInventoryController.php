@@ -238,6 +238,7 @@ public function destroy($id)
 public function downloadPDF($id) {
     $inventory = StudentInventory::findOrFail($id);
 
+
     $pdf = PDF::loadView('admin.pages.questionnaires.inventory.inventory-pdf', compact('inventory'));
     $pdf->setPaper('Folio', 'portrait');
     return $pdf->download('inventory_form.pdf');

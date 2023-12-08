@@ -238,8 +238,6 @@
                                 <p>If none, please specify:</p>
                             <input type="text" class="form-control col-md-4" name="parent_status" >
                             </div>
-
-
                             <!-- Add other FamilyBackground fields as needed -->
 
                             <!-- Siblings Fields -->
