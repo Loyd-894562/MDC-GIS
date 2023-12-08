@@ -244,8 +244,8 @@ public function downloadPDF($id) {
     return $pdf->download('inventory_form.pdf');
 }
 
-public function printinventory($id) {
-    $inventory = StudentInventory::findOrFail($id);
-    return view('admin.pages.questionnaires.inventory.inventory-pdf', compact('inventory'));
-}
+// public function printinventory($id) {
+//     $inventory = StudentInventory::findOrFail($id);
+//     return view('admin.pages.questionnaires.inventory.inventory-pdf', compact('inventory'));
+// }
 }

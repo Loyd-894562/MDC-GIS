@@ -137,6 +137,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
+                                    <a href="/admin/generate-code"
+                                    class="nav-link {{ 'admin/generate-code' == request()->path() ? 'active2' : '' }}">
+                                        <i class="nav-icon far fa-circle"></i>
+                                        <p>Generate Code</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
                                     <a href="/admin/counseling"
                                     class="nav-link {{ 'admin/counseling' == request()->path() ? 'active2' : '' }}">
                                         <i class="nav-icon far fa-circle"></i>

@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\ChatsController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Admin\ActivityController;
 use App\Http\Controllers\Admin\FeedbackController;
+use App\Http\Controllers\Admin\FormcodeController;
 use App\Http\Controllers\Auth\AuthIndexController;
 use App\Http\Controllers\Admin\ContactUsController;
 use App\Http\Controllers\Admin\AdminIndexController;
@@ -16,6 +17,7 @@ use App\Http\Controllers\Admin\Admin_ProfileController;
 use App\Http\Controllers\Normal_View\ProfileController;
 use App\Http\Controllers\Admin\AdminAnnouncementController;
 use App\Http\Controllers\Admin\AdminDownloadablesController;
+use App\Http\Controllers\Normal_View\QuestionnaireController;
 use App\Http\Controllers\Admin\Admin_ChangePasswordController;
 use App\Http\Controllers\Normal_View\ChangePasswordController;
 use App\Http\Controllers\Normal_View\NormalActivityController;
@@ -54,6 +56,9 @@ Route::get('/services', [IndexController::class, 'services']);
 Route::get('/check-appointment', [SetAppointmentController::class, 'index']);
 Route::post('/check-appointment', [SetAppointmentController::class, 'checkAppointment'])->name('appointment.checkStudent');
 
+Route::get('/check-questionnaire', [QuestionnaireController::class, 'index']);
+Route::post('/check-questionnaire', [QuestionnaireController::class, 'checkQuestionnaire'])->name('questionnaire.checkQuestionnaire');
+Route::get('/fill-form/{studentId}', [QuestionnaireController::class, 'fillQuestionnaire'])->name('normal-view.pages.questionnaire');
 
 Route::get('/check-feedback', [NormalFeedbackController::class, 'index']);
 Route::post('/check-feedback', [NormalFeedbackController::class, 'checkFeedback'])->name('feedback.checkFeedback');
@@ -70,6 +75,8 @@ Route::post('/logout', [AuthIndexController::class, 'logout'])->name('logout');
 
 
 Route::group(['middleware' => ['auth', 'role:admin']], function () {
+    Route::get('/admin/generate-code', [FormcodeController::class, 'indexCode']);
+    Route::post('/admin/generate-code', [FormcodeController::class, 'generateCode'])->name('generate.code');
 
     Route::get('/admin/downloadables', [AdminDownloadablesController::class, 'index'])->name('files.index');
     Route::post('/admin/downloadables', [AdminDownloadablesController::class, 'store'])->name('files.store');
@@ -127,8 +134,8 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
     Route::delete('/admin/inventory/{id}', [StudentInventoryController::class, 'destroy'])->name('inventory.destroy');
     Route::get('admin/inventory/pdf/{id}', [StudentInventoryController::class, 'downloadPDF'])
     ->name('admin.inventory.pdf');
-    Route::get('admin/inventory/print/{id}', [StudentInventoryController::class, 'printCounseling'])
-    ->name('admin.inventory.print');
+    // Route::get('admin/inventory/print/{id}', [StudentInventoryController::class, 'printCounseling'])
+    // ->name('admin.inventory.print');
 
 
 

@@ -1,12 +1,14 @@
-<div class="w-full text-white bg-blue-600 dark-mode:text-gray-200 dark-mode:bg-gray-800">
+<div class=" text-white bg-blue-600 dark-mode:text-gray-200 dark-mode:bg-gray-800">
     <div x-data="{ open: false }"
-        class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+        class="flex flex-col max-w-screen-xl px-4 mx-auto md:px-6 lg:px-8">
         <div class="p-4 flex flex-row items-center justify-between">
-            <div id="brand" class="py-1">
-                <img src="/images/logo.png" alt="mdc logo" class="h-14 w-auto rounded-full ml-5" />
+            <div id="brand" class="py-1 flex flex-row items-center justify-center mx-auto">
+                <img src="/images/logo.png" alt="mdc logo" class="h-14 w-auto rounded-full" />
+                <a href="#" class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">MDC-GIS-SHS</a>
             </div>
-            <a href="#"
-                class="text-lg ml-5 font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">MDC-GIS-SHS</a>
+
+
+
             <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
                 <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
                     <path x-show="!open" fill-rule="evenodd"
@@ -43,6 +45,8 @@
                 href="/guidance-announcement">Announcements</a>
             <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
                 href="/about-us">About Us</a>
+            <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                href="/check-questionnaire">Questionnaires</a>
 
             <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
                 href="/view-activities">Activities</a>
@@ -70,10 +74,39 @@
                             <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
                                 href="/login">Login</a>
                         @else
+                        <ul class="nav nav-treeview">
+
+                            <li class="nav-item">
+                                <a href="{{ route('profile') }}"
+                                    class="nav-link {{ '/profile' == request()->path() ? 'active2' : '' }}">
+                                    <i class="fa-solid fa-user nav-icon"></i>
+                                    <p class="text-gray-900">My Profile</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url('/chatify') }}"
+                                    class="nav-link {{ '/chatify' == request()->path() ? 'active2' : '' }}">
+                                    <i class="fa-solid fa-message nav-icon"></i>
+                                    <p class="text-gray-900">Chats</p>
+                                </a>
+                            </li>
+
+                            {{-- <li class="nav-item">
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <button style="margin-left: -62px;" type="submit" class="btn nav-link" data-toggle="modal"
+                                        data-target="#logout">
+                                        <i class="fa-solid fa-right-from-bracket nav-icon"></i>
+                                        <span>Logout</span>
+                                    </button>
+                                </form>
+                            </li> --}}
+
+                        </ul>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
-                            <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                            <a class="block text-gray-900 px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-dark dark-mode:hover:text-dark dark-mode:text-gray-900 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
                                 href="#"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                         @endif

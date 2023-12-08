@@ -35,11 +35,9 @@ class AuthIndexController extends Controller
             if (auth()->user()->is_admin) {
                 return redirect()->intended('/admin/dashboard');
             } else {
-                return redirect()->intended('/dashboard');
+                return redirect()->intended('/');
             }
         }
-
-
         return back()->withErrors(['id_number' => 'Invalid Credentials', 'password' => 'Invalid Credentials'])->withInput();
     }
 

@@ -92,6 +92,7 @@ public function store(Request $request, Appointment $appointment)
         $appointment = Appointment::findOrFail($id);
         $appointment->status = 1;
         $appointment->save();
+
         Mail::to($appointment->email)->send(new AppointmentApproved($appointment));
         return redirect()->route('appointments.appointments')->with('success', 'APPOINTMENT APPROVED');
     }
