@@ -46,6 +46,10 @@ Route::get('/phpinfo', function() {
 });
 
 Route::get('/', [IndexController::class, 'index']);
+Route::get('/success', [QuestionnaireController::class, 'success']);
+
+
+
 Route::get('/about-us', [IndexController::class, 'about']);
 Route::get('/dashboard', [IndexController::class, 'dashboardNormal']);
 Route::get('/contact-us', [NormalContactUsController::class, 'contact']);
@@ -56,9 +60,8 @@ Route::get('/services', [IndexController::class, 'services']);
 Route::get('/check-appointment', [SetAppointmentController::class, 'index']);
 Route::post('/check-appointment', [SetAppointmentController::class, 'checkAppointment'])->name('appointment.checkStudent');
 
-Route::get('/check-questionnaire', [QuestionnaireController::class, 'index']);
-Route::post('/check-questionnaire', [QuestionnaireController::class, 'checkQuestionnaire'])->name('questionnaire.checkQuestionnaire');
-Route::get('/fill-form/{studentId}', [QuestionnaireController::class, 'fillQuestionnaire'])->name('normal-view.pages.questionnaire');
+
+
 
 Route::get('/check-feedback', [NormalFeedbackController::class, 'index']);
 Route::post('/check-feedback', [NormalFeedbackController::class, 'checkFeedback'])->name('feedback.checkFeedback');
@@ -184,6 +187,13 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
 
 });
 Route::group(['middleware' => ['auth', 'role:user']], function () {
+
+    Route::get('/check-questionnaire', [QuestionnaireController::class, 'index']);
+Route::post('/check-questionnaire', [QuestionnaireController::class, 'checkQuestionnaire'])->name('questionnaire.checkQuestionnaire');
+Route::get('/fill-form/{studentId}', [QuestionnaireController::class, 'fillQuestionnaire'])->name('normal-view.pages.questionnaire');
+Route::post('/fill-form/{studentId}', [QuestionnaireController::class, 'readmissionstore']);
+Route::post('/fill-form/{studentId}', [QuestionnaireController::class, 'transferstore']);
+Route::post('/fill-form/{studentId}', [QuestionnaireController::class, 'inventoryStore']);
     Route::get('/dashboard', [IndexController::class, 'dashboardNormal']);
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
     Route::put('/update-profile/{id}', [ProfileController::class, 'update_profile'])->name('change_profile');

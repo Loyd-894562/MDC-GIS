@@ -8,7 +8,7 @@
     <div class="container mx-auto p-4">
         <div class="flex flex-col items-center justify-center mt-10">
 
-            <div class="max-w-[900px] bg-info shadow-lg rounded-lg overflow-hidden">
+            <div class="max-w-[900px] rounded-lg overflow-hidden">
 
                 <h1 class="text-4xl font-bold text-2xl mb-4 text-indigo-900 text-center">
                     About Us

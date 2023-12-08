@@ -69,9 +69,9 @@
                                 </button>
                                 <a href="{{ route('admin.inventory.pdf', $nvntry->id) }}"
                                    class="text-green-600 hover:underline">Download</a>
-                                <button class="text-blue-600 hover:underline"
+                                {{-- <button class="text-blue-600 hover:underline"
                                         onclick="printinventory({{ $nvntry->id }})">Print
-                                </button>
+                                </button> --}}
                             </div>
                         </td>
                     </tr>
@@ -92,14 +92,3 @@
     </div>
 @endsection
 
-@section('scripts')
-    <script>
-        function printinventory(inventoryId) {
-            const printUrl = "{{ route('admin.inventory.print', ':id') }}".replace(':id', inventoryId);
-            const printWindow = window.open(printUrl, '_blank');
-            printWindow.onload = function () {
-                printWindow.print();
-            };
-        }
-    </script>
-@endsection

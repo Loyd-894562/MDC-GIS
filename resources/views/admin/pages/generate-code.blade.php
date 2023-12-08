@@ -54,13 +54,11 @@
                                 <!-- Select form_name -->
                                 <label for="form_name">Select Form Name:</label>
                                 <select name="form_name" id="form_name">
-                                    <option value="Counseling Form">Counseling Form</option>
+                                    <option value="Student Inventory">Student Inventory</option>
                                     <option value="Readmission Form">Readmission Form</option>
                                     <option value="Exit Questionnaire for Transfers">Exit Questionnaire for Transfers</option>
                                 </select>
-
                                 <br>
-
                                 <!-- Button to generate code -->
                                 <button type="submit">Generate Code</button>
                             </form>
