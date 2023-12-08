@@ -110,8 +110,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/student-inventory"
-                                class="nav-link {{ 'admin/student-inventory' == request()->path() ? 'active2' : '' }}">
+                            <a href="/admin/inventory"
+                                class="nav-link {{ 'admin/inventory' == request()->path() ? 'active2' : '' }}">
                                 <i class="nav-icon fa-solid fa-inbox"></i>
                                 <p>
                                     Student Inventory

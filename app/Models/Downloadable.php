@@ -11,6 +11,7 @@ class Downloadable extends Model
 {
     use HasFactory, LogsActivity;
 
+    protected $guarded = [];
 
     public function getActivitylogOptions(): LogOptions
     {

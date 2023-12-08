@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('personal_datas', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->string('id_number');
             $table->string('course');
+            $table->string('acad_year');
             $table->string('lname')->nullable();
             $table->string('fname')->nullable();
             $table->string('mname')->nullable();
@@ -22,6 +23,7 @@ return new class extends Migration
             $table->longText('address');
             $table->integer('age');
             $table->longText('birthplace');
+            $table->string('status');
             $table->string('mobile_no');
             $table->string('religion');
             $table->string('citizenship');
@@ -31,9 +33,6 @@ return new class extends Migration
             $table->longText('guardian_address');
             $table->timestamps();
 
-
-            $table->foreign('user_id')->references('id')->on('users')
-            ->onUpdate('cascade');
         });
     }
 

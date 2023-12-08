@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Normal_View;
 use App\Models\User;
 use App\Models\Appointment;
 use Illuminate\Http\Request;
+use App\Mail\AppointmentCreated;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class SetAppointmentController extends Controller
 {
@@ -50,10 +52,12 @@ class SetAppointmentController extends Controller
         $appointment->reason = $validatedData['reason'];
         $appointment->save();
 
+        Mail::to($appointment->email)->send(new AppointmentCreated($appointment));
+
         return view('normal-view.pages.confirmation');
     } catch (\Exception $e) {
-        // Handle exceptions here (e.g., log the error)
-        return redirect()->back()->with('error', 'An error occurred while creating the appointment.');
+        \Illuminate\Support\Facades\Log::error($e->getMessage());
+        dd($e->getMessage());  // Display the error for debugging
     }
 }
 }

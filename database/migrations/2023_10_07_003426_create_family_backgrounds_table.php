@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('mother_name')->nullable();
             $table->string('father_name')->nullable();
+            $table->string('mother_age')->nullable();
+            $table->string('father_age')->nullable();
             $table->longText('mother_address')->nullable();
             $table->longText('father_address')->nullable();
             $table->string('father_religion')->nullable();
@@ -26,7 +28,6 @@ return new class extends Migration
             $table->string('mother_employmentplace')->nullable();
             $table->string('father_employmentplace')->nullable();
             $table->string('parent_status')->nullable();
-            $table->string('siblings')->nullable();
             $table->timestamps();
         });
     }

@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('downloadables', function (Blueprint $table) {
             $table->id();
-            $table->longText('file')->nullable();
-            $table->tinyInteger('is_visible')->default(1);
+            $table->longText('name')->nullable();
+            $table->longText('path')->nullable();
+            // $table->tinyInteger('is_visible')->default(1);
             $table->timestamps();
         });
     }

@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\AnnouncementController;
 use App\Http\Controllers\Admin\Admin_ProfileController;
 use App\Http\Controllers\Normal_View\ProfileController;
 use App\Http\Controllers\Admin\AdminAnnouncementController;
+use App\Http\Controllers\Admin\AdminDownloadablesController;
 use App\Http\Controllers\Admin\Admin_ChangePasswordController;
 use App\Http\Controllers\Normal_View\ChangePasswordController;
 use App\Http\Controllers\Normal_View\NormalActivityController;
@@ -25,6 +26,7 @@ use App\Http\Controllers\Admin\Questionnaires\TransferController;
 use App\Http\Controllers\Normal_View\NormalAnnouncementController;
 use App\Http\Controllers\Admin\Questionnaires\CounselingController;
 use App\Http\Controllers\Admin\Questionnaires\ReadmissionController;
+use App\Http\Controllers\Admin\Questionnaires\StudentInventoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -68,6 +70,13 @@ Route::post('/logout', [AuthIndexController::class, 'logout'])->name('logout');
 
 
 Route::group(['middleware' => ['auth', 'role:admin']], function () {
+
+    Route::get('/admin/downloadables', [AdminDownloadablesController::class, 'index'])->name('files.index');
+    Route::post('/admin/downloadables', [AdminDownloadablesController::class, 'store'])->name('files.store');
+    Route::get('/admin/downloadables/{id}/download', [AdminDownloadablesController::class, 'download'])->name('files.download');
+    Route::delete('/admin/downloadables/{id}', [AdminDownloadablesController::class, 'destroy'])->name('files.destroy');
+
+
     Route::get('/admin/dashboard', [AdminIndexController::class, 'index'])->name('admin.dashboard');
 
     Route::get('/admin/chats', [ChatsController::class, 'chats']);
@@ -107,6 +116,19 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
     ->name('admin.counselings.pdf');
     Route::get('admin/counselings/print/{id}', [CounselingController::class, 'printCounseling'])
     ->name('admin.counselings.print');
+
+
+    Route::get('/admin/inventory', [StudentInventoryController::class, 'inventory'])->name('admin.inventory');;
+    // Route::get('/admin/inventory', [StudentInventoryController::class, 'inventory'])->name('admin.inventory');
+    Route::get('/admin/inventory/create', [StudentInventoryController::class, 'inventoryCreate'])->name('inventory.create');
+    Route::post('/admin/inventory/create', [StudentInventoryController::class, 'inventoryStore']);
+    Route::get('/admin/inventory/{id}/update', [StudentInventoryController::class, 'inventoryEdit']);
+    Route::put('/admin/inventory/{id}/update', [StudentInventoryController::class, 'inventoryUpdate'])->name('admin.inventory.update');
+    Route::delete('/admin/inventory/{id}', [StudentInventoryController::class, 'destroy'])->name('inventory.destroy');
+    Route::get('admin/inventory/pdf/{id}', [StudentInventoryController::class, 'downloadPDF'])
+    ->name('admin.inventory.pdf');
+    Route::get('admin/inventory/print/{id}', [StudentInventoryController::class, 'printCounseling'])
+    ->name('admin.inventory.print');
 
 
 

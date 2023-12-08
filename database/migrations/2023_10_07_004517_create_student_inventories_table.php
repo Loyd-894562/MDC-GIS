@@ -13,17 +13,12 @@ return new class extends Migration
     {
         Schema::create('student_inventories', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->string('acad_year');
             $table->unsignedBigInteger('personal_id');
             $table->unsignedBigInteger('fambackground_id');
             $table->unsignedBigInteger('siblings_id');
             $table->unsignedBigInteger('educ_id');
-            $table->string('signature')->nullable();
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users')
-            ->onUpdate('cascade');
             $table->foreign('personal_id')->references('id')->on('personal_datas')
             ->onUpdate('cascade');
             $table->foreign('fambackground_id')->references('id')->on('family_backgrounds')

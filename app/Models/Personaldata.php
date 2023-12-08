@@ -2,14 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\StudentInventory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Siblings extends Model
+class Personaldata extends Model
 {
     use HasFactory;
 
-    protected $table = 'siblings';
+    protected $table = 'personal_datas';
 
     protected $guarded = [];
 

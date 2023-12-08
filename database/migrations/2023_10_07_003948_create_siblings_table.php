@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('civil_status')->nullable();
             $table->string('workplace')->nullable();
             $table->timestamps();
+
         });
     }
 

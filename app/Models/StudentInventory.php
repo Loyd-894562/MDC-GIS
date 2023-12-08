@@ -2,10 +2,28 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Siblings;
+use App\Models\Personaldata;
+use App\Models\FamilyBackground;
+use App\Models\EducationalBackground;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class StudentInventory extends Model
 {
     use HasFactory;
+    protected $table = 'student_inventories';
+    protected $guarded = [];
+    public function personaldata(){
+        return $this->belongsTo(Personaldata::class, 'personal_id');
+    }
+    public function familybackground(){
+        return $this->belongsTo(FamilyBackground::class);
+    }
+    public function siblings(){
+        return $this->belongsTo(Siblings::class);
+    }
+    public function educationalbackground(){
+        return $this->belongsTo(EducationalBackground::class);
+    }
 }
