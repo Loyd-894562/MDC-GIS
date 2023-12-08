@@ -63,6 +63,7 @@
                             <div class="flex justify-between items-center space-x-2">
                                 <a href="{{ route('admin.inventory.update', $nvntry->id) }}"
                                    class="text-blue-600 hover:underline">Update</a>
+
                                 <button type="submit"
                                         class="text-red-700 hover:underline"
                                         data-toggle="modal" data-target="#deleteModal">Delete

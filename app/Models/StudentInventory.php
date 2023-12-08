@@ -18,12 +18,12 @@ class StudentInventory extends Model
         return $this->belongsTo(Personaldata::class, 'personal_id');
     }
     public function familybackground(){
-        return $this->belongsTo(FamilyBackground::class);
+        return $this->belongsTo(FamilyBackground::class, 'fambackground_id');
     }
     public function siblings(){
-        return $this->belongsTo(Siblings::class);
+        return $this->belongsTo(Siblings::class, 'siblings_id');
     }
     public function educationalbackground(){
-        return $this->belongsTo(EducationalBackground::class);
+        return $this->belongsTo(EducationalBackground::class, 'educ_id');
     }
 }
