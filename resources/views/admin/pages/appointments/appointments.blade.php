@@ -27,7 +27,7 @@
                     @endforeach
                 </select>
 
-                <button type="submit">Search</button>
+                <button type="submit" class="btn btn-sm bg-primary">Search</button>
             </form>
 
 
