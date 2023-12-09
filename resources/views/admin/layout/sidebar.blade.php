@@ -82,7 +82,7 @@
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="/admin/appointment-calendar"
                                 class="nav-link {{ 'admin/appointment-calendar' == request()->path() ? 'active2' : '' }}">
                                 <i class="nav-icon fa-solid fa-calendar-check"></i>
@@ -90,7 +90,7 @@
                                     Appointment Calendar
                                 </p>
                             </a>
-                        </li>
+                        </li> --}}
                         <li class="nav-item">
                             <a href="/admin/activities"
                                 class="nav-link {{ 'admin/activities' == request()->path() ? 'active2' : '' }}">

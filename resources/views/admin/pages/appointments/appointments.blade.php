@@ -17,6 +17,21 @@
 
         <div class="flex justify-between mb-4">
             <span class="text-bold text-2xl">Total Entries: {{ $appointments->count() }}</span>
+            <form action="{{ route('appointments.appointments') }}" method="GET">
+                <input type="text" name="search" value="{{ $search ?? '' }}" placeholder="Search by name">
+
+                <select name="status">
+                    <option value="">Select Status</option>
+                    @foreach($statuses as $value => $text)
+                        <option value="{{ $value }}" {{ $status == $value ? 'selected' : '' }}>{{ $text }}</option>
+                    @endforeach
+                </select>
+
+                <button type="submit">Search</button>
+            </form>
+
+
+
             <a data-toggle="modal" data-target="#createModal"
                 class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                 Add Appointment </a>

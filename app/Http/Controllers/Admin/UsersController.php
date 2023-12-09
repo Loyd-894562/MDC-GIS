@@ -2,15 +2,25 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\User;
-use Illuminate\Http\Request;
+use App\Models\Appointment;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use App\Models\CounselingForm;
+use App\Models\StudentInventory;
+use App\Http\Controllers\Controller;
 
 class UsersController extends Controller
 {
     public function users(){
         $users = User::all();
+
+        // foreach ($users as $user) {
+        //     $user->hasCounseling = CounselingForm::where('fullname', $user->fullname)->exists();
+        //     $user->hasStudentInventory = StudentInventory::where('fullname', $user->fullname)->exists();
+        //     $user->hasAppointment = Appointment::where('fullname', $user->fullname)->exists();
+        //     $user->hasQuestionnaire = Questionnaires::where('fullname', $user->fullname)->exists();
+        // }
         return view('admin.pages.users.users', compact('users'));
     }
 

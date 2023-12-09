@@ -12,10 +12,26 @@ use Illuminate\Support\Facades\Mail;
 
 class AppointmentController extends Controller
 {
-    public function appointments(){
-        $appointments = Appointment::all();
-        return view('admin.pages.appointments.appointments', compact('appointments'));
+    public function appointments(Request $request){
+        $search = $request->input('search');
+        $status = $request->input('status');
+
+        $appointmentsQuery = Appointment::query();
+
+        if ($search) {
+            $appointmentsQuery->where('fullname', 'like', '%' . $search . '%');
+        }
+
+        $statuses = [0 => 'Pending', 1 => 'Approved']; // Define the status options
+
+        $appointments = $appointmentsQuery->when($status !== null, function ($query) use ($status) {
+            $query->where('status', $status);
+        })->get();
+
+        return view('admin.pages.appointments.appointments', compact('appointments', 'search', 'status', 'statuses'));
     }
+
+
     public function appointmentCalendar(){
         $appointments = Appointment::all();
         return view('admin.pages.appointments.appointment-calendar', compact('appointments'));

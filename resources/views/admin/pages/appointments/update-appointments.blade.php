@@ -71,10 +71,12 @@
                         @enderror
                     </div>
                     <div class="text-center mb-2 flex justify-between items-center">
+                        @if($appointment->status === '0')
                         <button type="submit"
                             class="px-4 me-3 py-2 bg-green-500 text-white w-full rounded hover:bg-green-600">Approve Appointment</button>
-                        <button type="submit"
-                            class="px-4 py-2 bg-red-500 text-white w-full rounded hover:bg-red-600">Cancel Appointment</button>
+                        @endif
+                        {{-- <button type="submit"
+                            class="px-4 py-2 bg-red-500 text-white w-full rounded hover:bg-red-600">Cancel Appointment</button> --}}
                     </div>
                     <div class="text-center">
                         <button type="submit"
