@@ -64,10 +64,10 @@
                                 <a href="{{ route('admin.inventory.update', $nvntry->id) }}"
                                    class="text-blue-600 hover:underline">Update</a>
 
-                                <button type="submit"
+                                {{-- <button type="submit"
                                         class="text-red-700 hover:underline"
                                         data-toggle="modal" data-target="#deleteModal">Delete
-                                </button>
+                                </button> --}}
                                 <a href="{{ route('admin.inventory.pdf', $nvntry->id) }}"
                                    class="text-green-600 hover:underline">Download</a>
                                 {{-- <button class="text-blue-600 hover:underline"
