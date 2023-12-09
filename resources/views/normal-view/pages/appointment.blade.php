@@ -29,10 +29,9 @@
                 <h1 class="text-4xl font-bold mb-4 mt-5 text-indigo-900 text-center">
                     Set an Appointment
                 </h1>
-                {{-- <p class="text-center">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing
-                    elit.
-                </p> --}}
+                <p class="text-center">
+                   The guidance counselor is only available during <br> <span class="fw-bold"> Mondays - Fridays from 8:00am - 5:00pm.</span> <br>Please set your appointment within the time frame.
+                </p>
 
                     @if (session('success'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -72,7 +71,7 @@
                 <div class="grid md:grid-cols-2 gap-4">
                     <div class="mb-4">
                         <label for="time" class="block text-gray-700 font-bold mb-2">Time</label>
-                        <input type="time" id="time" name="time" placeholder="Time" min="{{ now()->format('H:i') }}" step="1"
+                        <input type="time" id="time" name="time" placeholder="Time"
                             class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" />
                         @error('time')
                             <div class="text-sm text-red-500 italic">
