@@ -163,12 +163,6 @@
                                         <p>Exit Questionnaire for Transfers</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="nav-icon far fa-circle"></i>
-                                        <p>List</p>
-                                    </a>
-                                </li>
                             </ul>
                         </li>
 
