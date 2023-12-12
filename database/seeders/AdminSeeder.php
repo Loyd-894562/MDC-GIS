@@ -31,6 +31,7 @@ class AdminSeeder extends Seeder
         $role1->givePermissionTo('delete articles');
 
         $role2 = Role::create(['name' => 'admin']);
+        $role3 = Role::create(['name' => 'super-admin']);
         $role2->givePermissionTo('publish articles');
         $role2->givePermissionTo('unpublish articles');
         $role2->givePermissionTo('edit articles');
@@ -70,5 +71,19 @@ class AdminSeeder extends Seeder
             'remember_token' => Str::random(10),
         ]);
         $user->assignRole($role2);
+        $user = User::factory()->create([
+            'profile_image' => null,
+            'id_number' => 'super-admin',
+            'name' => 'Administrator',
+            'address' => 'Bohol',
+            'email' => 'superadmin@gmail.com',
+            'gender' => 'Female',
+            'phone_number' => '09512072888',
+            'position' => 'Guidance Counselor',
+            'email_verified_at' => now(),
+            'password' => bcrypt('password'),
+            'remember_token' => Str::random(10),
+        ]);
+        $user->assignRole($role3);
     }
 }

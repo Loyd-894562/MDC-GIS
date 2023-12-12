@@ -143,6 +143,7 @@
                                         <p>Generate Code</p>
                                     </a>
                                 </li>
+                                @role('super-admin')
                                 <li class="nav-item">
                                     <a href="/admin/counseling"
                                     class="nav-link {{ 'admin/counseling' == request()->path() ? 'active2' : '' }}">
@@ -150,6 +151,7 @@
                                         <p>Counseling Form</p>
                                     </a>
                                 </li>
+                                @endrole
                                 <li class="nav-item">
                                     <a href="/admin/readmission"
                                     class="nav-link {{ 'admin/readmission' == request()->path() ? 'active2' : '' }}">
@@ -165,7 +167,7 @@
                                 </li>
                             </ul>
                         </li>
-
+                        @role('super-admin')
                         <li class="nav-item">
                             <a href="/admin/logs"
                                 class="nav-link {{ 'admin/logs' == request()->path() ? 'active2' : '' }}">
@@ -175,6 +177,7 @@
                                 </p>
                             </a>
                         </li>
+                        @endrole
                         <li class="nav-item">
                             <a href="/admin/downloadables"
                                 class="nav-link {{ 'admin/downloadables' == request()->path() ? 'active2' : '' }}">

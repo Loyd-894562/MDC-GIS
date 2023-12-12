@@ -77,7 +77,7 @@ Route::post('/logout', [AuthIndexController::class, 'logout'])->name('logout');
 // Route::get('/register', [AuthIndexController::class, 'registerForm'])->name('register');
 
 
-Route::group(['middleware' => ['auth', 'role:admin']], function () {
+Route::group(['middleware' => ['auth', 'role:admin|super-admin']], function () {
     Route::get('/admin/generate-code', [FormcodeController::class, 'indexCode']);
     Route::post('/admin/generate-code', [FormcodeController::class, 'generateCode'])->name('generate.code');
 
