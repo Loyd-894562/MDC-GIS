@@ -18,21 +18,14 @@
                     </div>
                     <div class="mt-5">
                         <p class="text-gray-800 text-4xl font-extrabold" style="font-family: sans-serif;">
-                            <strong class="font-extrabold">WELCOME TO MDC GUIDANCE</strong><br /><strong>INFORMATION SYSTEM</strong>
+                            <strong class="font-extrabold">WELCOME TO </strong><br /><strong>MDC GUIDANCE INFORMATION SYSTEM</strong>
                         </p>
                     </div>
-                    <p class="mt-5 text-2xl font-extrabold text-gray-800"
-                        style="font-family: 'Times New Roman', Times, serif;">
-                        Discover yourself
-                    </p>
-                    <p class="mb-4 text-2xl font-extrabold text-gray-800"
-                        style="font-family: 'Times New Roman', Times, serif;">
-                        Take the test to find the perfect who you are
-                    </p>
+                  
                     <br />
                     <a v-if="!auth.user" href="/dashboard"
                         class="bg-sky-500 text-white py-3 font-bold px-10 rounded-md hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
-                        style="border-radius: 20px;">Getting Started</a>
+                        style="border-radius: 20px;">Get Started</a>
                 </div>
             </div>
         </div>

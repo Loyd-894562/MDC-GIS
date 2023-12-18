@@ -39,7 +39,7 @@
             <a href="/admin/dashboard" class="brand-link">
                 <img src="/images/logo.png" alt="MDC logo" class="brand-image img-circle elevation-0"
                     style="opacity: .8; border-radius: 50%;">
-                <span class="brand-text"><strong id="branding-mdc">MDC-GIS-SHS</strong></span>
+                <span class="brand-text"><strong id="branding-mdc">MDC-GIS</strong></span>
             </a>
             <div class="sidebar">
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
@@ -247,7 +247,7 @@
                 <span id="date"></span>
                 <span id="time"></span></span>
             </div>
-            <strong>Copyright &copy; 2023-2024 <a href="#" target="_blank">MDC-GIS-SHS</a>.</strong> All rights
+            <strong>Copyright &copy; 2023-2024 <a href="#" target="_blank">MDC-GIS</a>.</strong> All rights
             reserved.
         </footer>
     </div>
