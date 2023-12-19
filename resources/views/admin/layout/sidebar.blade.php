@@ -37,7 +37,7 @@
         </nav>
         <aside class="main-sidebar bg-blue-900 elevation-4" >
             <a href="/admin/dashboard" class="brand-link">
-                <img src="/images/logo.png" alt="MDC logo" class="brand-image img-circle elevation-0"
+                <img src="/images/logo1.jpg" alt="MDC logo" class="brand-image img-circle elevation-0"
                     style="opacity: .8; border-radius: 50%;">
                 <span class="brand-text"><strong id="branding-mdc">MDC-GIS</strong></span>
             </a>

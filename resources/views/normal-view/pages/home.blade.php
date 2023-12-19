@@ -14,7 +14,7 @@
             <div class="shadow-lg rounded-lg overflow-hidden">
                 <div class="p-4 text-center">
                     <div class="logo h-20 w-20 mx-auto">
-                        <img src="/images/logo.png" alt="Logo" class="rounded-full" />
+                        <img src="/images/logo1.jpg" alt="Logo" class="rounded-full" />
                     </div>
                     <div class="mt-5">
                         <p class="text-gray-800 text-4xl font-extrabold" style="font-family: sans-serif;">

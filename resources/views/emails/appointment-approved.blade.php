@@ -46,7 +46,9 @@
 
         <p>Your appointment has been approved! Your schedule is {{ $appointment->date }} at {{ $appointment->time }}.</p>
 
-<p>Please see to it to be at the office on time</p>
+        <p>Please see to it to be at the office on time. Thank you!</p>
+
+        <p>Have a Good Day!</p>
 
         <div class="footer">
             <p>This is an automated email. Please do not reply to this message.</p>

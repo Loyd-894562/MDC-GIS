@@ -3,7 +3,7 @@
         class="flex flex-col max-w-screen-xl px-4 mx-auto md:px-6 lg:px-8">
         <div class="p-4 flex flex-row items-center justify-between">
             <div id="brand" class="py-1 flex flex-row items-center justify-center mx-auto">
-                <img src="/images/logo.png" alt="mdc logo" class="h-14 w-auto rounded-full" />
+                <img src="/images/logo1.jpg" alt="mdc logo" class="h-14 w-auto rounded-full" />
                 <a href="#" class="text-lg font-semibold tracking-widest text-white uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline"> MDC - Guidance Information System</a>
             </div>
 

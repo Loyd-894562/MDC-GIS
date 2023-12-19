@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="app.css">
-    <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/logo1.jpg" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>MDC-GIS</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
