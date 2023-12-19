@@ -1,5 +1,5 @@
 <div>
-    <div class="w-full text-white-700 bg-white dark-mode:text-white-200 dark-mode:bg-gray-800">
+    <div class="w-full text-white-700 bg-white dark-mode:text-white-200 dark-mode:bg-blue-900">
 
         <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #032a6d;">
 

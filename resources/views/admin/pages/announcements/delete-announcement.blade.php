@@ -8,7 +8,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <p>Are you sure you want to delete this appointment?</p>
+                <p>Are you sure you want to delete this announcement ?</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary text-dark" data-dismiss="modal">Cancel</button>

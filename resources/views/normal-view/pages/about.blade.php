@@ -5,17 +5,18 @@
 @endsection
 
 @section('content')
+<h1 class="text-4xl font-bold text-2xl mb-4 text-indigo-900 text-center">
+                    About Us
+                </h1>
+
     <div class="container mx-auto p-4">
         <div class="flex flex-col items-center justify-center mt-10">
 
             <div class="max-w-[900px] rounded-lg overflow-hidden">
 
-                <h1 class="text-4xl font-bold text-2xl mb-4 text-indigo-900 text-center">
-                    About Us
-                </h1>
-
+                
                 <div class="card mb-4 sm:flex">
-                    <div class="p-4 bg-blue-400 bg-opacity-75 rounded-md">
+                    <div class="p-4 bg-white bg-opacity-75 rounded-md">
                         <h1 class="font-bold text-2xl text-start mb-2 sm:mb-0 sm:mr-4">VISION</h1>
                         <p class="text-justify text-l">
                             The Guidance Office of Mater Dei College is an office where a helping relationship exists between
@@ -26,7 +27,7 @@
                 </div>
 
                 <div class="card mb-4 sm:flex">
-                    <div class="p-4 bg-blue-400 bg-opacity-75 rounded-md">
+                    <div class="p-4 bg-white bg-opacity-75 rounded-md">
                         <h1 class="font-bold text-2xl text-end mb-2 sm:mb-0 sm:mr-4">MISSION</h1>
                         <p class="text-justify text-l">
                             The Guidance Office develops students’ self-awareness thereby promoting understanding of self and
@@ -37,7 +38,7 @@
                 </div>
 
                 <div class="card mb-4">
-                    <div class="p-4 bg-blue-400 bg-opacity-75 rounded-md">
+                    <div class="p-4 bg-white bg-opacity-75 rounded-md">
                         <h1 class="font-bold text-2xl mb-2">GOALS</h1>
                         <p class="text-justify text-l">
                             The Guidance Services aims to: <br>

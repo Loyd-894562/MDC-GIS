@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<div class="flex items-center justify-center h-full">
+<div class="flex items-center justify-center h-full bg-opacity-5">
     <div class="mx-auto px-4">
         <div class="text-center mb-8">
             <h1 class="bg-white px-2 rounded"></h1>

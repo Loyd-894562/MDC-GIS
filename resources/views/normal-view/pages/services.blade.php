@@ -5,15 +5,16 @@
 @endsection
 
 @section('content')
-    <div class="container mx-auto p-4">
-        <div class="flex items-center justify-center mt-5">
-            <div class="max-w-6xl bg-blue-500 bg-opacity-75 shadow-lg rounded-lg overflow-hidden overflow-y-auto h-100" style="height: 500px">
-                {{-- <div class="bg-cover bg-center h-64 p-4" style="background-image: url('/images/bg2.png')"></div> --}}
-                <div class="p-4">
-                    <h1 class="text-4xl font-bold mb-4 text-indigo-900 text-center">
+  <h1 class="text-4xl font-bold mb-4 text-indigo-900 text-center">
                         Services
                     </h1>
-                    <p>GUIDANCE COUNSELOR DUTIES AND RESPONSIBILITIES
+    <div class="container mx-auto p-4">
+        <div class="flex items-center justify-center mt-5">
+            <div class="max-w-6xl bg-white bg-opacity-75 shadow-lg rounded-lg overflow-hidden overflow-y-auto h-100" style="height: 500px">
+                {{-- <div class="bg-cover bg-center h-64 p-4" style="background-image: url('/images/bg2.png')"></div> --}}
+                <div class="p-4">
+                  
+                    <p> <b>GUIDANCE COUNSELOR DUTIES AND RESPONSIBILITIES</b>
                         <br>
                         Under the supervision of the Vice President for Administration and Finance, and the Director of Student Affairs and Services, the duties of the Guidance Counselor are the following:
                         <br>
@@ -34,7 +35,7 @@
                         <br>
                         <br>
                         <br>
-                        PSYCHOMETRICIAN DUTIES AND RESPONSIBILITIES
+                        <b> PSYCHOMETRICIAN DUTIES AND RESPONSIBILITIES</b>
 
                         <br>Under the supervision of the Vice President for Administration and Finance, the Director of Student Affairs and Services, and the Guidance Counselor, the duties of the Psychometrician are the following:
                         <br><br> 1. Takes charge in the administration and interpretation of the testing activities of the school, including constructing and developing tests;

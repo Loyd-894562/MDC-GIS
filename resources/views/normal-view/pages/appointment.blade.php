@@ -7,6 +7,10 @@
 @endsection
 
 @section('content')
+<h1 class="text-4xl font-bold text-2xl mb-4 text-indigo-900 text-center">
+                    Appointment
+                </h1>
+
 <div class="container mx-auto md:p-10">
     <div class="flex items-center justify-center mt-10">
         <div class="max-w-[700px] bg-white shadow-lg rounded-lg overflow-hidden px-20">

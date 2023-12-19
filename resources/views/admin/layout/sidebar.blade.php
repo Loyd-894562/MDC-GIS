@@ -35,7 +35,7 @@
                 </li>
             </ul>
         </nav>
-        <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #032a6d;">
+        <aside class="main-sidebar bg-blue-900 elevation-4" >
             <a href="/admin/dashboard" class="brand-link">
                 <img src="/images/logo.png" alt="MDC logo" class="brand-image img-circle elevation-0"
                     style="opacity: .8; border-radius: 50%;">
