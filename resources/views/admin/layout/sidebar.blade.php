@@ -41,7 +41,7 @@
                     style="opacity: .8; border-radius: 50%;">
                 <span class="brand-text"><strong id="branding-mdc">MDC-GIS</strong></span>
             </a>
-            <div class="sidebar">
+            <div class="sidebar text-white">
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
                         <img id="sidebar-img" src="{{ Auth::user()->profile_image === null ? url('images/profile.jpg') : asset('user_img/' .Auth::user()->profile_image) }}" class="img-circle elevation-2" alt="User Image"
